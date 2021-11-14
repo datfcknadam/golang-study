@@ -1,4 +1,4 @@
-package models
+package name
 
 import (
 	"net/http"
@@ -18,7 +18,7 @@ func AddFullName(c *gin.Context) {
 	var newFullName fullname
 
 	if err := c.ShouldBindJSON(&newFullName); err != nil {
-		c.IndentedJSON(http.StatusBadRequest, gin.H{"message": "bad json :("})
+		c.JSON(http.StatusBadRequest, gin.H{"message": "bad json :("})
 	}
 
 	fullNames = append(fullNames, newFullName)

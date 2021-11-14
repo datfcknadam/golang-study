@@ -14,6 +14,7 @@ func NewRoutes() routes {
 	}
 	v1 := r.router.Group("/v1")
 	r.addName(v1)
+	r.addCrypto(v1)
 	return r
 }
 
